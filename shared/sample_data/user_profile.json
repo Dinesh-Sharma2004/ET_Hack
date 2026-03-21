@@ -1,0 +1,26 @@
+{
+  "role": "Investor",
+  "interests": [
+    "Markets",
+    "AI",
+    "Fintech"
+  ],
+  "sectors": [
+    "Semiconductors",
+    "BFSI",
+    "Enterprise software"
+  ],
+  "languages": [
+    "English",
+    "Hindi",
+    "Tamil"
+  ],
+  "risk_appetite": "Balanced",
+  "portfolio_symbols": [
+    "NVDA",
+    "INFY",
+    "TCS",
+    "MSFT"
+  ],
+  "onboarding_completed": true
+}
