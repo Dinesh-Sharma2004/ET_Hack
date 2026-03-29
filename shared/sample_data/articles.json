@@ -64,6 +64,97 @@
       "published_at": "2026-03-24",
       "source": "Economic Times Labs",
       "read_time_minutes": 4
+    },
+    {
+      "id": "art-006",
+      "title": "Retail investors rotate into quality banks as deposit growth and credit discipline improve",
+      "summary": "Private banks with stable deposit franchises are regaining favor as earnings visibility improves.",
+      "content": "Deposit pricing has stabilized for select private lenders, improving confidence in margin resilience. Retail investors are watching asset quality, CASA ratios, and digital cross-sell capability to assess which lenders may outperform in the next earnings cycle.",
+      "category": "Markets",
+      "entities": ["HDFCBANK", "ICICIBANK", "BFSI", "Deposits"],
+      "sentiment": 0.54,
+      "language": "English",
+      "published_at": "2026-03-23",
+      "source": "Economic Times Labs",
+      "read_time_minutes": 4
+    },
+    {
+      "id": "art-007",
+      "title": "EV supply chains in India accelerate as battery localization becomes a boardroom priority",
+      "summary": "Battery chemistry partnerships and local assembly plans are reshaping the economics of India's EV ecosystem.",
+      "content": "Auto and energy companies are increasing focus on battery localization, component sourcing, and charging infrastructure. The strategic question is shifting from market entry to long-term unit economics, subsidy dependence, and domestic manufacturing durability.",
+      "category": "Manufacturing",
+      "entities": ["EV", "TATAMOTORS", "Battery", "Manufacturing"],
+      "sentiment": 0.49,
+      "language": "English",
+      "published_at": "2026-03-22",
+      "source": "Economic Times Labs",
+      "read_time_minutes": 5
+    },
+    {
+      "id": "art-008",
+      "title": "Cloud cost governance becomes the next big lever for AI-native startup survival",
+      "summary": "Startups are using FinOps discipline to protect runway while still scaling AI features.",
+      "content": "As inference and training costs rise, startup leaders are prioritizing model selection, workload placement, and usage-based pricing discipline. Investors increasingly ask whether AI features deepen retention or simply inflate infrastructure bills.",
+      "category": "AI",
+      "entities": ["Startups", "Cloud", "FinOps", "SaaS"],
+      "sentiment": 0.42,
+      "language": "English",
+      "published_at": "2026-03-21",
+      "source": "Economic Times Labs",
+      "read_time_minutes": 5
+    },
+    {
+      "id": "art-009",
+      "title": "Pharma exporters brace for a mixed quarter as regulation tightens and pricing power diverges",
+      "summary": "US-focused drug makers are balancing compliance spend against selective margin opportunities.",
+      "content": "Pharma exporters are navigating quality control expectations, shifting buyer behavior, and pricing divergence across product categories. Management commentary suggests resilient players will be those with stronger compliance systems and broader product mixes.",
+      "category": "Healthcare",
+      "entities": ["SUNPHARMA", "Pharma", "Exports", "Compliance"],
+      "sentiment": 0.28,
+      "language": "English",
+      "published_at": "2026-03-20",
+      "source": "Economic Times Labs",
+      "read_time_minutes": 6
+    },
+    {
+      "id": "art-010",
+      "title": "Consumer internet firms chase profitability by shifting from discount-led growth to retention-led growth",
+      "summary": "Acquisition costs are under sharper scrutiny as management teams justify long-term margin pathways.",
+      "content": "Consumer internet companies are measuring cohort quality, repeat usage, and creator economics more tightly. Public market pressure is nudging management away from broad promotions and toward more defensible retention systems.",
+      "category": "Startups",
+      "entities": ["Consumer internet", "GMV", "Retention", "Creators"],
+      "sentiment": 0.37,
+      "language": "English",
+      "published_at": "2026-03-19",
+      "source": "Economic Times Labs",
+      "read_time_minutes": 5
+    },
+    {
+      "id": "art-011",
+      "title": "Oil marketing companies regain focus as lower crude volatility supports earnings visibility",
+      "summary": "Energy investors are revisiting refining and distribution names as volatility cools.",
+      "content": "With crude swings moderating, energy investors are re-evaluating marketing margins, inventory cycles, and policy sensitivity. Distribution scale and refining efficiency remain important differentiators in the near term.",
+      "category": "Energy",
+      "entities": ["ONGC", "IOCL", "Energy", "Crude"],
+      "sentiment": 0.44,
+      "language": "English",
+      "published_at": "2026-03-18",
+      "source": "Economic Times Labs",
+      "read_time_minutes": 4
+    },
+    {
+      "id": "art-012",
+      "title": "Sovereign cloud discussions intensify as regulated sectors ask for stronger data controls",
+      "summary": "Banks, insurers, and public-sector buyers are pushing vendors to localize security and hosting guarantees.",
+      "content": "Regulated sectors are placing more weight on data residency, auditability, and sovereign cloud readiness in vendor evaluations. This shift could benefit providers that combine compliance depth with enterprise AI capabilities.",
+      "category": "Enterprise",
+      "entities": ["Cloud", "Sovereign", "BFSI", "Compliance"],
+      "sentiment": 0.61,
+      "language": "English",
+      "published_at": "2026-03-17",
+      "source": "Economic Times Labs",
+      "read_time_minutes": 4
     }
   ]
 }

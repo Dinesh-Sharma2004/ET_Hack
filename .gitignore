@@ -15,3 +15,8 @@ frontend/.run/
 .DS_Store
 Thumbs.db
 .sixth/
+
+# Runtime artifacts
+.runtime-logs/
+shared/runtime/
+storyTEMP_MPY_wvf_snd.mp4

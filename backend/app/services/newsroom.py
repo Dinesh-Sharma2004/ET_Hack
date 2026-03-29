@@ -108,7 +108,9 @@ class NewsroomService:
         frame = pd.read_csv(BytesIO(content))
         symbols = frame.iloc[:, 0].dropna().astype(str).str.upper().tolist()
         profile = self.repository.load_profile()
-        enriched = UserProfile(**profile.model_dump(), portfolio_symbols=symbols)
+        enriched_payload = profile.model_dump()
+        enriched_payload["portfolio_symbols"] = symbols
+        enriched = UserProfile(**enriched_payload)
         recommendations = self.engine.rank_articles(enriched, self.repository.load_articles())[:5]
         return RecommendationResponse(profile=enriched, recommendations=recommendations)
 

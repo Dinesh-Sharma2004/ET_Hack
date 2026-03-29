@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myet-video-worker
+  namespace: myet-ai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myet-video-worker
+  template:
+    metadata:
+      labels:
+        app: myet-video-worker
+    spec:
+      containers:
+        - name: worker
+          image: ghcr.io/dinesh-sharma2004/myet-api:latest
+          command: ["celery", "-A", "app.tasks.celery_app.celery_app", "worker", "--loglevel=info", "-Q", "video"]

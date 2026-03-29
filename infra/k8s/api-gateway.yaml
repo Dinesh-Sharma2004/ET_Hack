@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myet-api
+  namespace: myet-ai
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myet-api
+  template:
+    metadata:
+      labels:
+        app: myet-api
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/dinesh-sharma2004/myet-api:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: myet-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myet-api
+  namespace: myet-ai
+spec:
+  selector:
+    app: myet-api
+  ports:
+    - port: 8000
+      targetPort: 8000

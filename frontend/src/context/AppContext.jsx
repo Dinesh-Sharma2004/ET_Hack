@@ -9,7 +9,11 @@ export function AppProvider({ children }) {
   const [cache, setCache] = useState({});
 
   useEffect(() => {
-    api.getProfile().then(setProfile).catch(() => null);
+    api
+      .bootstrapSession()
+      .then(() => api.getProfile())
+      .then(setProfile)
+      .catch(() => null);
   }, []);
 
   const value = useMemo(

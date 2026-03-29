@@ -12,8 +12,10 @@ services:
       - ./shared:/shared
     environment:
       - ENVIRONMENT=development
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
     depends_on:
       - redis
+      - postgres
 
   worker:
     build:
@@ -25,6 +27,7 @@ services:
       - ./shared:/shared
     depends_on:
       - redis
+      - postgres
 
   web:
     build:
@@ -36,11 +39,146 @@ services:
       - ./frontend:/app
       - /app/node_modules
     environment:
-      - VITE_API_BASE=http://localhost:8000/api
+      - VITE_API_BASE=http://localhost:8100/api
     depends_on:
-      - api
+      - api-gateway
+
+  api-gateway:
+    build:
+      context: .
+      dockerfile: services/api-gateway/Dockerfile
+    ports:
+      - "8100:8100"
+    environment:
+      - INGESTION_SERVICE_URL=http://ingestion-service:8101
+      - RAG_SERVICE_URL=http://rag-service:8102
+      - PERSONALIZATION_SERVICE_URL=http://personalization-service:8103
+      - TRANSLATION_SERVICE_URL=http://translation-service:8104
+      - VIDEO_SERVICE_URL=http://video-service:8105
+      - NEWS_SERVICE_URL=http://news-service:8106
+      - PROFILE_SERVICE_URL=http://profile-service:8107
+      - STORY_SERVICE_URL=http://story-service:8108
+      - RECOMMENDATIONS_SERVICE_URL=http://recommendations-service:8109
+      - GATEWAY_AUTH_SECRET=myet-compose-secret
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
+    depends_on:
+      - postgres
+
+  ingestion-service:
+    build:
+      context: .
+      dockerfile: services/ingestion-service/Dockerfile
+    ports:
+      - "8101:8101"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
+    depends_on:
+      - postgres
+
+  rag-service:
+    build:
+      context: .
+      dockerfile: services/rag-service/Dockerfile
+    ports:
+      - "8102:8102"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
+    depends_on:
+      - postgres
+
+  personalization-service:
+    build:
+      context: .
+      dockerfile: services/personalization-service/Dockerfile
+    ports:
+      - "8103:8103"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
+    depends_on:
+      - postgres
+
+  translation-service:
+    build:
+      context: .
+      dockerfile: services/translation-service/Dockerfile
+    ports:
+      - "8104:8104"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
+    depends_on:
+      - postgres
+
+  video-service:
+    build:
+      context: .
+      dockerfile: services/video-service/Dockerfile
+    ports:
+      - "8105:8105"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
+      - VIDEO_PUBLIC_BASE_URL=http://127.0.0.1:8105
+    depends_on:
+      - postgres
+
+  news-service:
+    build:
+      context: .
+      dockerfile: services/news-service/Dockerfile
+    ports:
+      - "8106:8106"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
+    depends_on:
+      - postgres
+
+  profile-service:
+    build:
+      context: .
+      dockerfile: services/profile-service/Dockerfile
+    ports:
+      - "8107:8107"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
+    depends_on:
+      - postgres
+
+  story-service:
+    build:
+      context: .
+      dockerfile: services/story-service/Dockerfile
+    ports:
+      - "8108:8108"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
+    depends_on:
+      - postgres
+
+  recommendations-service:
+    build:
+      context: .
+      dockerfile: services/recommendations-service/Dockerfile
+    ports:
+      - "8109:8109"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://myet:myet@postgres:5432/myet
+    depends_on:
+      - postgres
 
   redis:
     image: redis:7-alpine
     ports:
       - "6379:6379"
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_DB=myet
+      - POSTGRES_USER=myet
+      - POSTGRES_PASSWORD=myet
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

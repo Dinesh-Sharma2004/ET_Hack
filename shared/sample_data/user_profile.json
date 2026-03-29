@@ -2,25 +2,29 @@
   "role": "Investor",
   "interests": [
     "Markets",
-    "AI",
-    "Fintech"
+    "AI"
   ],
   "sectors": [
-    "Semiconductors",
-    "BFSI",
-    "Enterprise software"
+    "Fintech"
   ],
   "languages": [
     "English",
-    "Hindi",
-    "Tamil"
+    "Hindi"
   ],
   "risk_appetite": "Balanced",
   "portfolio_symbols": [
-    "NVDA",
-    "INFY",
-    "TCS",
-    "MSFT"
-  ],
-  "onboarding_completed": true
+    "BALANCED INVESTOR",
+    "BALANCED INVESTOR",
+    "BALANCED INVESTOR",
+    "BALANCED INVESTOR",
+    "BALANCED INVESTOR",
+    "AI BULL",
+    "AI BULL",
+    "AI BULL",
+    "AI BULL",
+    "INDIA GROWTH",
+    "INDIA GROWTH",
+    "INDIA GROWTH",
+    "INDIA GROWTH"
+  ]
 }

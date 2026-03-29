@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 
 import { api } from "../api/client";
 import { NewsCard } from "../components/cards/NewsCard";
-import { SentimentChart } from "../components/charts/SentimentChart";
 import { Loader } from "../components/ui/Loader";
 
 export default function StoryPage() {
@@ -22,7 +21,7 @@ export default function StoryPage() {
         <p className="text-xs uppercase tracking-[0.35em] text-slate-500">/story/{id}</p>
         <h1 className="mt-3 font-display text-4xl">{data.arc.theme}</h1>
         <p className="mt-4 text-sm leading-8 text-slate-300">
-          Follow the vertical timeline, relationship graph, and sentiment curve to understand where the narrative is heading next.
+          Follow the evolving coverage timeline, entity map, and AI-generated outlook to understand where the story is heading next.
         </p>
       </section>
 
@@ -34,7 +33,6 @@ export default function StoryPage() {
               <div key={`${point.date}-${point.headline}`} className="rounded-3xl border border-white/10 p-4">
                 <div className="text-xs uppercase tracking-[0.24em] text-slate-500">{point.date}</div>
                 <h2 className="mt-2 text-lg text-white">{point.headline}</h2>
-                <div className="mt-3 text-sm text-teal-100">Impact score {point.impact_score}</div>
               </div>
             ))}
           </div>
@@ -57,7 +55,19 @@ export default function StoryPage() {
               ))}
             </div>
           </div>
-          <SentimentChart timeline={data.arc.timeline} />
+          <div className="rounded-[28px] border border-white/10 bg-white/6 p-5">
+            <div className="text-xs uppercase tracking-[0.28em] text-slate-500">AI reading</div>
+            <div className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
+              <p>
+                This view focuses on how the story is developing across coverage, who is involved, and what the AI expects
+                users to watch next.
+              </p>
+              <p>
+                Use the connected entities and related reporting to move deeper into the narrative without switching into
+                analytics-heavy views.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myet-config
+  namespace: myet-ai
+data:
+  ENVIRONMENT: production
+  API_PREFIX: /api
+  VITE_API_BASE: https://api.myet.example/api

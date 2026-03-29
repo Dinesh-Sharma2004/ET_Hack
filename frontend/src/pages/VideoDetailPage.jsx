@@ -21,13 +21,21 @@ export default function VideoDetailPage() {
         <div className="rounded-[32px] border border-white/10 bg-white/6 p-7">
           <p className="text-xs uppercase tracking-[0.35em] text-slate-500">/video/{id}</p>
           <h1 className="mt-3 font-display text-4xl">{data.detail.title}</h1>
-          <div className="mt-5 aspect-video rounded-[28px] border border-white/10 bg-[linear-gradient(135deg,rgba(15,118,110,0.18),rgba(9,21,33,0.8))] p-6">
-            <div className="text-sm text-slate-300">Video player placeholder</div>
-            <div className="mt-4 font-display text-3xl text-white">{data.detail.runtime_seconds}s narrative cut</div>
-            <div className="mt-3 text-sm leading-7 text-slate-300">
-              Designed for FFmpeg stitching, subtitles, charts, and TTS-driven production output.
+          {data.video_url ? (
+            <video
+              controls
+              className="mt-5 aspect-video w-full rounded-[28px] border border-white/10 bg-black"
+              src={data.video_url}
+            />
+          ) : (
+            <div className="mt-5 aspect-video rounded-[28px] border border-white/10 bg-[linear-gradient(135deg,rgba(15,118,110,0.18),rgba(9,21,33,0.8))] p-6">
+              <div className="text-sm text-slate-300">Video generation in progress</div>
+              <div className="mt-4 font-display text-3xl text-white">{data.detail.runtime_seconds}s narrative cut</div>
+              <div className="mt-3 text-sm leading-7 text-slate-300">
+                Designed for FFmpeg stitching, subtitles, charts, and TTS-driven production output.
+              </div>
             </div>
-          </div>
+          )}
         </div>
         <div className="rounded-[32px] border border-white/10 bg-black/20 p-7">
           <p className="text-xs uppercase tracking-[0.28em] text-slate-500">Key highlights</p>

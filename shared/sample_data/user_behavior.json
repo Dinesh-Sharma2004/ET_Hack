@@ -1,0 +1,25 @@
+{
+  "sessions": [
+    {
+      "user_segment": "Investor",
+      "clicked_articles": ["art-001", "art-002", "art-006"],
+      "saved_articles": ["art-004", "art-012"],
+      "dwell_seconds": 418,
+      "preferred_mode": "expert"
+    },
+    {
+      "user_segment": "Founder",
+      "clicked_articles": ["art-003", "art-008", "art-010"],
+      "saved_articles": ["art-008"],
+      "dwell_seconds": 362,
+      "preferred_mode": "eli5"
+    },
+    {
+      "user_segment": "Student",
+      "clicked_articles": ["art-002", "art-005", "art-011"],
+      "saved_articles": ["art-002", "art-005"],
+      "dwell_seconds": 287,
+      "preferred_mode": "contextual"
+    }
+  ]
+}
